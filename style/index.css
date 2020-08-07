@@ -49,13 +49,12 @@ abbr, acronym {
     padding:0;
     margin:0;
     max-width:100%;
-    border:1px solid grey;
+    /*border:1px solid grey;*/
   }
 
 html{
-    font-size:62.5%;
     font-family: 'Oswald', sans-serif;
-    color: #f7f7f7;
+    color: #3f3f44;
   }
 body{
     margin: 0 auto;
@@ -65,14 +64,17 @@ body{
 h1{
     font-size: 4rem;
     font-family: 'Seaweed Script', cursive;
+    color: #f7f7f7
 }
 h2{
-    font-size: 3rem;
-    background-color: #8f758e;
+    font-size: 4rem;
     font-family: 'Seaweed Script', cursive;
 }
 a{
     text-decoration: none;
+}
+h3{
+    font-size: 2.5rem;
 }
 
 /*Header and nav styling*/
@@ -89,10 +91,16 @@ nav{
     
 
 }
-nav a{
+nav a, .footer-button{
     flex-grow:1;
-    
-  
+    background-color: #f7f7f7;
+    color: #3f3f44;
+    transition: 1s;
+    line-height: 3;
+}
+nav a:hover, .footer-button:hover{
+    color: #fdcb9e;
+    background-color: #3f3f44;
 }
 
 /*Intro styling including hero image*/
@@ -100,7 +108,7 @@ nav a{
     display: flex;
     flex-flow: row wrap;
     justify-content: center;
-    
+    background-color: #3f3f44;
 }
 .hero{
     width: 100%;
@@ -110,16 +118,28 @@ nav a{
     width: 70%;
     padding:4%;
     align-self: flex-end;
-    background-color: #3f3f44;
+    background-color: #f7f7f7;
+    color: #3f3f44;
 }
 .intro-button{
-    background-color: #8f758e;
+    background-color: #3f3f44;
     display: inline-block;
-    width: 50px;
     text-align: center;
+    color: #f7f7f7;
+    line-height: 2;
+    padding: 5px 15px;
+    border:1px dashed #cceabb;
+    transition: 1s;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+.intro-button:hover{
+    background-color: #cceabb;
+    color: #3f3f44;
+    border: 1px dashed #3f3f44;
 }
 .intro p{
-    background-color: #8f758e;
+    background-color: #f7f7f7;
 }
 .gallery{
     display: flex;
@@ -133,28 +153,95 @@ nav a{
     font-size: 1.4rem;
     margin: 1% 0;
     max-width: 40%;
+    padding: 0 0 5% 0;
+}
+
+/*Main body content of non index pages*/
+.content {
+    padding: 5%;
+}
+
+.gallery-project{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+}
+.gallery-project div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 1% 0;
+    max-width: 40%;
+    padding: 0 0 5% 0;
+}
+
+.gallery-project img{
+    transition: filter .5s;
+    -webkit-filter: grayscale(75%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(75%); /* FF 35+ */
+    border:3px dashed #cceabb;
+}
+
+.gallery-project img:hover{
+    -webkit-filter: grayscale(0%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
+    filter: grayscale(0%); /* FF 35+ */
+}
+
+/*Footer styling*/
+footer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 2;
+    background-color: #3f3f44;
+    color: #f7f7f7;
+
+}
+.footer-button{
+    font-size: 3rem;
 }
 
 /*Desktop overrides*/
 @media(min-width: 500px){
     h1{
         font-size: 7rem;
+        padding-left: 1%;
     }
     .gallery{
-        padding:5%;
+        padding:2%;
     }
     .gallery div{
         max-width: 22%;
+        padding: 0;
+    }
+    .gallery-project{
+        padding:2%;
+    }
+    .gallery-project div{
+        max-width: 22%;
+        padding: 0;
     }
     .hero{
         width: 45%;
         padding:0 2% 0 1%;
     }
+    .intro{
+        justify-content: flex-start;
+    }
     .intro-text{
         width: 45%;
     }
     nav{
-        width: 25%;
-        padding-left: 2%;
+        width: 570px;
+        padding-left: 1%;
+        line-height: 3;
+        flex-flow: row nowrap;
+    }
+    nav a{
+        font-size: 2rem;
+    }
+    .content{
+        padding: 0 5% 0 5%;
     }
 }
