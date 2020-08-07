@@ -1,1 +1,160 @@
-/* Add CSS styling here */
+/*Google font link*/
+@import url('https://fonts.googleapis.com/css2?family=Oswald&family=Seaweed+Script&display=swap');
+/*Styles used
+Header style
+font-family: 'Seaweed Script', cursive;
+
+Body style
+font-family: 'Oswald', sans-serif;
+*/
+
+/* Beginning of CSS reset*/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, 
+pre, form, fieldset, input, textarea, p, blockquote, th, td { 
+	padding: 0;
+	margin: 0;
+	}
+fieldset, img { 
+	border: 0;
+	}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	}
+ol, ul {
+	list-style: none;
+	}
+address, caption, cite, code, dfn, em, strong, th, var {
+	font-weight: normal;
+	font-style: normal;
+	}
+caption, th {
+	text-align: left;
+	}
+h1, h2, h3, h4, h5, h6 {
+	font-weight: normal;
+	font-size: 100%;
+	}
+q:before, q:after {
+	content: '';
+	}
+abbr, acronym { 
+	border: 0;
+    }
+/*End of CSS reset*/
+
+/*General styling*/
+*{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+    max-width:100%;
+    border:1px solid grey;
+  }
+
+html{
+    font-size:62.5%;
+    font-family: 'Oswald', sans-serif;
+    color: #f7f7f7;
+  }
+body{
+    margin: 0 auto;
+    background: #f7f7f7;
+}
+
+h1{
+    font-size: 4rem;
+    font-family: 'Seaweed Script', cursive;
+}
+h2{
+    font-size: 3rem;
+    background-color: #8f758e;
+    font-family: 'Seaweed Script', cursive;
+}
+a{
+    text-decoration: none;
+}
+
+/*Header and nav styling*/
+header{
+    display: flex;
+    flex-flow: column;
+    background-color: #3f3f44;    
+}
+nav{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    text-align: center;
+    
+
+}
+nav a{
+    flex-grow:1;
+    
+  
+}
+
+/*Intro styling including hero image*/
+.intro{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    
+}
+.hero{
+    width: 100%;
+    padding:0 2% 0 1%;
+}
+.intro-text{
+    width: 70%;
+    padding:4%;
+    align-self: flex-end;
+    background-color: #3f3f44;
+}
+.intro-button{
+    background-color: #8f758e;
+    display: inline-block;
+    width: 50px;
+    text-align: center;
+}
+.intro p{
+    background-color: #8f758e;
+}
+.gallery{
+    display: flex;
+    flex-flow:row wrap;
+    justify-content: space-evenly;
+}
+.gallery div{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 1.4rem;
+    margin: 1% 0;
+    max-width: 40%;
+}
+
+/*Desktop overrides*/
+@media(min-width: 500px){
+    h1{
+        font-size: 7rem;
+    }
+    .gallery{
+        padding:5%;
+    }
+    .gallery div{
+        max-width: 22%;
+    }
+    .hero{
+        width: 45%;
+        padding:0 2% 0 1%;
+    }
+    .intro-text{
+        width: 45%;
+    }
+    nav{
+        width: 25%;
+        padding-left: 2%;
+    }
+}
