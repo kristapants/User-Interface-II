@@ -196,10 +196,21 @@ footer{
     line-height: 2;
     background-color: #3f3f44;
     color: #f7f7f7;
-
+}
+.footer-ask{
+    padding-bottom: 0;
 }
 .footer-button{
     font-size: 3rem;
+    padding: 5px;
+    line-height: 2;
+    margin: 0 0 15px 0;
+}
+.social{
+    width: 50px;
+}
+.social-div{
+    padding: 5px;
 }
 
 /*Desktop overrides*/
