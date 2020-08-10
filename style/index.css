@@ -43,6 +43,30 @@ abbr, acronym {
     }
 /*End of CSS reset*/
 
+/*Offscreen skip to content style*/
+a.offscreen {
+    position:absolute;
+    left:-1000px;
+    top:-1000px;
+    width:1px;
+    height:1px;
+    text-align: left;
+    overflow:hidden;
+    }
+    
+    a.offscreen:focus, a.offscreen:active, a.offscreen:hover {
+    position:absolute;
+    left:0;
+    top:0;
+    width:auto;
+    height:auto;
+    overflow:visible;
+    background-color:#FF3;
+    border: 1px dotted #000;
+    }
+
+
+
 /*General styling*/
 *{
     box-sizing:border-box;
@@ -62,9 +86,10 @@ body{
 }
 
 h1{
-    font-size: 4rem;
+    font-size: 7rem;    
     font-family: 'Seaweed Script', cursive;
-    color: #f7f7f7
+    color: #f7f7f7;
+    padding-left: 1%;
 }
 h2{
     font-size: 4rem;
@@ -84,12 +109,12 @@ header{
     background-color: #3f3f44;    
 }
 nav{
+    width: 45%;
+    padding-left: 1%;
+    line-height: 3;
+    flex-flow: row nowrap;
+    background-color: #f7f7f7;
     display: flex;
-    flex-flow: row wrap;
-    justify-content: center;
-    text-align: center;
-    
-
 }
 nav a, .footer-button{
     flex-grow:1;
@@ -97,6 +122,8 @@ nav a, .footer-button{
     color: #3f3f44;
     transition: 1s;
     line-height: 3;
+    font-size: 2rem;
+    text-align: center;
 }
 nav a:hover, .footer-button:hover{
     color: #fdcb9e;
@@ -107,15 +134,19 @@ nav a:hover, .footer-button:hover{
 .intro{
     display: flex;
     flex-flow: row wrap;
-    justify-content: center;
+    justify-content: flex-start;
     background-color: #3f3f44;
 }
 .hero{
-    width: 100%;
-    padding:0 2% 0 1%;
+    width: 45%;
+    background-image: url(/assets/hero-img.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: top-left;
 }
+
 .intro-text{
-    width: 70%;
+    width: 45%;
     padding:4%;
     align-self: flex-end;
     background-color: #f7f7f7;
@@ -145,6 +176,7 @@ nav a:hover, .footer-button:hover{
     display: flex;
     flex-flow:row wrap;
     justify-content: space-evenly;
+    padding: 2%;
 }
 .gallery div{
     display: flex;
@@ -152,19 +184,20 @@ nav a:hover, .footer-button:hover{
     text-align: center;
     font-size: 1.4rem;
     margin: 1% 0;
-    max-width: 40%;
-    padding: 0 0 5% 0;
+    max-width: 22%;
+    padding: 0;
 }
 
 /*Main body content of non index pages*/
 .content {
-    padding: 5%;
+    padding: 0 5%;
 }
 
 .gallery-project{
     display: flex;
     flex-flow:row wrap;
     justify-content: space-evenly;
+    padding: 2%;
 }
 .gallery-project div{
     display: flex;
@@ -213,46 +246,62 @@ footer{
     padding: 5px;
 }
 
-/*Desktop overrides*/
-@media(min-width: 500px){
+
+
+/*Mobile overrides*/
+
+@media(max-width: 800px){ 
     h1{
-        font-size: 7rem;
+        font-size: 4rem;
         padding-left: 1%;
     }
-    .gallery{
-        padding:2%;
+
+
+    nav{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: center;
+        align-items: center;
+        width:100%;
     }
-    .gallery div{
-        max-width: 22%;
-        padding: 0;
+    nav a{
+        line-height:2;
+
+    }
+
+    .gallery{
+        padding:0;
+    }
+    .gallery div, .project-item{
+        max-width: 40%;
+        padding: 0  0 5% 0;
     }
     .gallery-project{
-        padding:2%;
+        padding:0;
     }
     .gallery-project div{
         max-width: 22%;
         padding: 0;
     }
     .hero{
-        width: 45%;
-        padding:0 2% 0 1%;
+        width: 100%;
+        height: 50vh;
     }
     .intro{
-        justify-content: flex-start;
+        justify-content: center;
     }
     .intro-text{
-        width: 45%;
+        width: 70%;
     }
-    nav{
-        width: 570px;
-        padding-left: 1%;
-        line-height: 3;
-        flex-flow: row nowrap;
-    }
-    nav a{
-        font-size: 2rem;
-    }
+
     .content{
-        padding: 0 5% 0 5%;
+        padding: 5%;
+    }
+}
+
+@media(max-width: 500px){ 
+    .gallery div{
+        max-width: 80%;
+        padding: 0  0 5% 0;
     }
 }
